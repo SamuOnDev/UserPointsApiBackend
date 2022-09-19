@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "g9eCBFhNlCQiORwum6rS/mBj0JvNbuZ99HlpniblQeE=",
+  "Source": "UserPointsApiBackend",
+  "BasePath": "_content/UserPointsApiBackend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

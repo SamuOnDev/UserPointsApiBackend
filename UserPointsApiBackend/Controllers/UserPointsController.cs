@@ -11,6 +11,14 @@ using UserPointsApiBackend.Services;
 
 namespace UserPointsApiBackend.Controllers
 {
+    public class UserWithPoint
+    {
+        public int Id { get; set; }
+        public Rank Rank { get; set; }
+        public float? Points { get; set; }
+        public float? TotalPoints { get; set; }
+    }
+
     [Route("api/[controller]")]
     [ApiController]
     public class UserPointsController : ControllerBase

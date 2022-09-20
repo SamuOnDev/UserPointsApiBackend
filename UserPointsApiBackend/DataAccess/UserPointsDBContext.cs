@@ -12,6 +12,6 @@ namespace UserPointsApiBackend.DataAccess
 
         public DbSet<User>? Users { get; set; }
         public DbSet<UserPoint> UserPoints { get; set; }
-        public DbSet<UserWithPoint> UserWithPoints { get; set; }
+        // public DbSet<UserWithPoint> UserWithPoints { get; set; }
     }
 }

@@ -9,9 +9,6 @@ using UserPointsApiBackend.DataAccess;
 using UserPointsApiBackend.Models.DataModels;
 using UserPointsApiBackend.Services;
 
-// System.InvalidOperationException: Unable to resolve service for type 'UserPointsApiBackend.Services.UserPointServices' while attempting to activate 'UserPointsApiBackend.Controllers.UserPointsController'.
-
-
 namespace UserPointsApiBackend.Controllers
 {
     [Route("api/[controller]")]
@@ -19,15 +16,12 @@ namespace UserPointsApiBackend.Controllers
     public class UserPointsController : ControllerBase
     {
         private readonly UserPointsDBContext _context;
-        private readonly IUserPointServices _userPointServices;
 
-        public UserPointsController(UserPointsDBContext context, IUserPointServices userPointServices)
+        public UserPointsController(UserPointsDBContext context)
         {
             _context = context;
-            _userPointServices = userPointServices;
         }
 
-        // TODO: Implementar metodos de Recopilar puntos y Agregar puntos al usuario
         // GET: api/UserPoints/5
         [HttpGet("{id}")]
         public async Task<ActionResult<UserWithPoint>> GetUserPoint(int id)
@@ -83,7 +77,7 @@ namespace UserPointsApiBackend.Controllers
             }
 
             userPoint.TotalPoints = userPoint.TotalPoints + totalSum;
-            userPoint.Points = userPoint.TotalPoints + totalSum;
+            userPoint.Points = userPoint.Points + totalSum;
 
             _context.Entry(userPoint).State = EntityState.Modified;
 
